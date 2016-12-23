@@ -1,0 +1,24 @@
+package com.seehope.service.impl;
+
+import java.util.List;
+
+import javax.annotation.Resource;
+
+import org.springframework.stereotype.Service;
+
+import com.seehope.dao.IUserDao;
+import com.seehope.pojo.User;
+import com.seehope.service.IUserService;
+
+@Service("userService")
+public class UserServiceImpl implements IUserService {
+	
+	@Resource
+	private IUserDao dao;
+	
+	
+	public List<User> listAll() {
+		return dao.listUser();
+	}
+
+}
